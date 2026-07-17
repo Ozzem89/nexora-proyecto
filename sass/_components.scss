@@ -1,0 +1,230 @@
+.site-header {
+  background: $ink;
+  color: $white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background .25s ease, box-shadow .25s ease;
+
+  &.is-scrolled {
+    background: rgba($ink, .95);
+    box-shadow: 0 .4rem 2rem rgba(0,0,0,.18);
+  }
+}
+
+.navbar {
+  min-height: 5.3rem;
+
+  .navbar-toggler {
+    border-color: rgba($white,.3);
+
+    &:focus {
+      box-shadow: 0 0 0 .2rem rgba($lime,.4);
+    }
+  }
+
+  .navbar-toggler-icon {
+    filter: invert(1);
+  }
+}
+
+.brand {
+  font-size: 1.32rem;
+  font-weight: 800;
+  letter-spacing: -.08em;
+  white-space: nowrap;
+
+  > span:first-child {
+    background: $lime;
+    border-radius: 50%;
+    color: $ink;
+    display: inline-grid;
+    font-size: .88rem;
+    height: 1.65rem;
+    letter-spacing: -.05em;
+    margin-right: .18rem;
+    place-items: center;
+    width: 1.65rem;
+  }
+
+  .brand-dot {
+    color: $lime;
+  }
+}
+
+.nav-link {
+  color: rgba($white,.72);
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .55rem .85rem !important;
+
+  &:hover,
+  &.active {
+    color: $white;
+  }
+}
+
+.nav-cta {
+  border: 1px solid rgba($white,.42);
+  border-radius: 3rem;
+  margin-left: .4rem;
+  transition: all .25s ease;
+
+  &:hover {
+    background: $lime;
+    border-color: $lime;
+    color: $ink;
+  }
+}
+
+.eyebrow {
+  @include label;
+  align-items: center;
+  color: rgba($white,.72);
+  display: flex;
+  gap: .55rem;
+  margin-bottom: 1.5rem;
+
+  span {
+    background: $lime;
+    border-radius: 50%;
+    height: .5rem;
+    width: .5rem;
+  }
+
+  &.eyebrow-dark {
+    color: $muted;
+
+    span {
+      background: $ink;
+    }
+  }
+}
+
+.text-link {
+  align-items: center;
+  border-bottom: 1px solid rgba($white,.35);
+  display: inline-flex;
+  font-size: .85rem;
+  font-weight: 700;
+  gap: 1rem;
+  padding-bottom: .5rem;
+  transition: gap .25s ease;
+
+  &:hover {
+    gap: 1.35rem;
+  }
+
+  &.dark-link {
+    border-color: $line;
+  }
+}
+
+/* ===== BOTONES ===== */
+
+.button {
+  align-items: center;
+  border: 0;
+  border-radius: 3rem;
+  display: inline-flex;
+  font-size: .85rem;
+  font-weight: 800;
+  gap: 1.2rem;
+  padding: .85rem 1.2rem .85rem 1.5rem;
+  transition: transform .25s ease, background .25s ease;
+
+  &:hover {
+    transform: translateY(-.2rem);
+  }
+}
+
+/* Botón principal (usa @extend) */
+.button-light {
+  @extend .button;
+  background: $lime;
+  color: $ink;
+
+  &:hover {
+    background: $white;
+  }
+}
+
+/* Nueva variante de botón (usa @extend) */
+.button-outline {
+  @extend .button;
+  background: transparent;
+  border: 2px solid $lime;
+  color: $lime;
+
+  &:hover {
+    background: $lime;
+    color: $ink;
+  }
+}
+
+.cta-strip {
+  background: $lime;
+  padding: 1.6rem 0;
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -.03em;
+    margin: 0;
+  }
+
+  a {
+    border-bottom: 1px solid $ink;
+    font: 500 .75rem $font-mono;
+    letter-spacing: .06em;
+    padding-bottom: .25rem;
+    text-transform: uppercase;
+  }
+}
+
+.site-footer {
+  background: $navy;
+  color: $white;
+  padding: 3rem 0 1.4rem;
+
+  .footer-top {
+    align-items: flex-start;
+    border-bottom: 1px solid rgba($white,.18);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3rem;
+  }
+
+  .footer-top p {
+    font-size: .9rem;
+    margin: 0;
+  }
+
+  .footer-bottom {
+    color: rgba($white,.58);
+    display: flex;
+    flex-wrap: wrap;
+    font: .63rem $font-mono;
+    gap: 1rem;
+    justify-content: space-between;
+    letter-spacing: .04em;
+    padding-top: 1.3rem;
+    text-transform: uppercase;
+
+    p {
+      margin: 0;
+    }
+
+    a + a {
+      margin-left: 1rem;
+    }
+  }
+}

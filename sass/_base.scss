@@ -1,0 +1,14 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: $paper; color: $ink; font-family: $font-display; line-height: 1.55; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-weight: 700; letter-spacing: -.055em; }
+h1 { font-size: clamp(3rem, 8vw, 7.6rem); line-height: .98; }
+h2 { font-size: clamp(2rem, 4.4vw, 4.3rem); line-height: 1.04; }
+h3 { font-size: 1.35rem; }
+em { color: $lime; font-style: normal; }
+.section-space { padding: 6rem 0; @include breakpoint(lg) { padding: 9rem 0; } }
+.section-dark { background: $ink; color: $white; }
+.skip-link { background: $lime; color: $ink; left: 1rem; padding: .7rem 1rem; position: fixed; top: -5rem; z-index: 9999; &:focus { top: 1rem; } }
